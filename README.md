@@ -1,73 +1,62 @@
-# React + TypeScript + Vite
+# piii 🧍🏻
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A lightweight desktop app that quietly watches your posture from the top of your screen.
 
-Currently, two official plugins are available:
+When you've been slouching too long, a small glass pill gently lets you know — without breaking your flow.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## React Compiler
+- Real-time posture detection via camera (MoveNet)
+- Notifies you after 10 seconds of bad posture
+- Click the pill to see your posture score and status
+- Lives quietly at the top of your screen
+- Draggable — place it wherever you want
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the ESLint configuration
+- [Tauri v2](https://tauri.app/) — lightweight desktop runtime
+- [React + TypeScript + Vite](https://vitejs.dev/)
+- [TensorFlow.js + MoveNet](https://www.tensorflow.org/js) — pose estimation
+- [Framer Motion](https://www.framer.com/motion/) — animations
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Getting Started
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Prerequisites
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- [Node.js](https://nodejs.org/) v18+
+- [Rust](https://rustup.rs/)
+- [Visual Studio C++ Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/) — Windows only
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Install
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+\`\`\`bash
+git clone https://github.com/yourusername/piii.git
+cd piii
+npm install --legacy-peer-deps
+\`\`\`
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Dev
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+\`\`\`bash
+npx tauri dev
+\`\`\`
+
+### Build
+
+\`\`\`bash
+npx tauri build
+\`\`\`
+
+Outputs \`.exe\` / \`.msi\` to \`src-tauri/target/release/bundle/\`.
+
+## Usage
+
+1. Launch the app — it will ask for camera permission
+2. Grant permission and posture detection starts automatically
+3. After 10 seconds of bad posture, a message appears
+4. Click the pill to expand and see your score
+5. Drag it anywhere on screen
+
+## License
+
+MIT
