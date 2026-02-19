@@ -10,7 +10,6 @@ When you've been slouching too long, a small glass pill gently lets you know —
 - Notifies you after 10 seconds of bad posture
 - Click the pill to see your posture score and status
 - Lives quietly at the top of your screen
-- Draggable — place it wherever you want
 
 ## Tech Stack
 
