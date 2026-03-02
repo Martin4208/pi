@@ -29,8 +29,8 @@ When you've been slouching too long, a small glass pill gently lets you know —
 ### Install
 
 \`\`\`bash
-git clone https://github.com/yourusername/piii.git
-cd piii
+git clone https://github.com/yourusername/pi.git
+cd pi
 npm install --legacy-peer-deps
 \`\`\`
 
