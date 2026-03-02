@@ -1,4 +1,4 @@
-# Deskwork Posture Detection System 🧍🏻
+# Deskwork Posture Detection System (PI) 🧍🏻
 
 A lightweight desktop app that quietly watches your posture from the top of your screen.
 
