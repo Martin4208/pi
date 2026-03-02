@@ -1,4 +1,4 @@
-# piii 🧍🏻
+# Deskwork Posture Detection System 🧍🏻
 
 A lightweight desktop app that quietly watches your posture from the top of your screen.
 
